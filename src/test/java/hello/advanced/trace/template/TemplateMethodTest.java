@@ -2,6 +2,7 @@ package hello.advanced.trace.template;
 
 
 import hello.advanced.trace.template.code.AbstractTemplate;
+import hello.advanced.trace.template.code.LambdaTemplate;
 import hello.advanced.trace.template.code.SubClassLogic1;
 import hello.advanced.trace.template.code.SubClassLogic2;
 import lombok.extern.slf4j.Slf4j;
@@ -63,5 +64,13 @@ public class TemplateMethodTest {
             }
         };
         template2.execute();
+    }
+
+    @Test
+    void templateMethodV3() {
+        LambdaTemplate template1 = new LambdaTemplate();
+        LambdaTemplate template2 = new LambdaTemplate();
+        template1.execute(() -> log.info("비즈니스 로직 1 실행"));
+        template2.execute(() -> log.info("비즈니스 로직 2 실행"));
     }
 }
