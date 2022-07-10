@@ -23,6 +23,5 @@ public class OrderServiceV3 {
             trace.exception(status, e);
             throw e;
         }
-
     }
 }
